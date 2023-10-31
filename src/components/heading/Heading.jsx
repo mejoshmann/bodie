@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Heading() {
   return (
     <div className="header">
-      <Link to="/">
+      <Link className="header__links" to="/">
       <h1 className="header__heading">
         Bodie <br />
         Morgan
@@ -13,7 +13,7 @@ function Heading() {
       <nav className="nav">
         <ul className="nav__list">
           <li className="nav__item">About</li>
-          <Link to="/Gear">
+          <Link className="header__links" to="/Gear">
           <li className="nav__item">Gear</li>
           </Link>
           <li className="nav__item">Gallery</li>

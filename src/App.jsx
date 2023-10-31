@@ -11,7 +11,7 @@ function App() {
       <Heading />
       <Routes>
         <Route path="/Home" element={<Home/>}></Route>
-        <Route path="/Gear" element={<Gear/>}></Route>
+        {/* <Route path="/Gear" element={<Gear/>}></Route> */}
       </Routes>
 
     </div>
