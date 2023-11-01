@@ -16,9 +16,8 @@ function Heading() {
           <Link className="header__links" to="/Gear">
           <li className="nav__item">Gear</li>
           </Link>
-          <li className="nav__item">Gallery</li>
-            <a href="#" className="nav__insta"></a>
-            <a href="#" className="nav__fb"></a>
+          <li className="nav__item">Media</li>
+         
         </ul>
       </nav>
     </div>
