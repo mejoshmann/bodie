@@ -1,63 +1,116 @@
+@use "../../styles/mixins" as *;
+
 .header {
+  z-index: 1;
+  position: relative;
+
+  @include tablet {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    width: 90%;
-    margin: auto;
-    
+    padding: 1rem
+  }
 
-    &__heading {
-        line-height: 1;
-        cursor: pointer;
-        font-size: 3rem;
-        color: #98E4FF;
+  &__burgerCont {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1rem 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+        padding: 0;
+    }
+  }
+
+  &__heading {
+    line-height: 1;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #98e4ff;
+    margin: 0;
+
+    @include desktop {
+        font-size: 4rem;
+        padding: 1rem;
     }
 
-    &__links {
-        text-decoration: none;
+  }
 
+  &__links {
+    text-decoration: none;
+  }
+
+  &__hamburger {
+    background-image: url("../../icons/skiingblue.png");
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 4rem;
+    background-size: contain;
+    cursor: pointer;
+
+    @include tablet {
+        display: none;
     }
+  }
 }
 
 .nav {
-    width: 50%;
+  visibility: hidden;
 
+  @include tablet {
+    visibility: visible;
+  }
 
-    &__list {
-        display: flex;
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    height: 10rem;
+    background: rgb(0,0,0,0.4);
+
+    @include tablet {
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: baseline;
-        list-style-type: none;      
-        text-decoration: none;
+        background: transparent;
+        height: auto;
+        width: 30rem;
     }
+  }
 
-    &__item {
-        text-decoration: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        text-decoration: none;
-        color: #98E4FF;
-    }
+  &.open {
+    visibility: visible;
+  }
 
-    &__insta {
-        width: 3rem;
-        height: 3rem;
-        background-image: url("../../icons/instagram.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+  &__item {
+  }
 
-    &__fb {
-        width: 3rem;
-        height: 3rem;
-        background-image: url("../../icons/facebook.png");
-        background-size: contain;
+  &__link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #98e4ff;
+
+    @include desktop {
+        font-size: 2rem;
     }
+  }
+
+  &__insta {
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../../icons/instagram.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__fb {
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../../icons/facebook.png");
+    background-size: contain;
+  }
 }
-
-
-
-    

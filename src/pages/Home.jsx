@@ -1,8 +1,16 @@
+import Heading from "../components/heading/Heading";
+import "./Home.scss";
 
 function Home() {
     return(
         <>
-        <div className="home"></div>
+        <Heading/>
+        <div className="home">
+        <div className="overlay">
+
+
+        </div>
+        </div>
         </>
     )
 }
