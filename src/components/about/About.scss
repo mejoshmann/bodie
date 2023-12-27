@@ -1,0 +1,22 @@
+.about {
+   display: flex;
+   flex-direction: row;
+   background-image: url("../../images/bodie2.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100vh;
+
+   &__left {
+    width: 50%;
+    margin: 12% 0 0 0;
+    padding: 0 2%;
+    background-color: #fff;
+    opacity: 90%;   
+    border-top-right-radius: 90px;
+
+
+   }
+}

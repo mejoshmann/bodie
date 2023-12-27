@@ -3,46 +3,46 @@
 .gear {
     width: 100vw;
     height: 100vh;
-    background-image: url("../../images/skiier.jpg");
+    background-image: url("../../images/Pow.jpg");
     background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
 
-    &__skis {
-        border: 1px solid black;
-        width: 15rem;
-        height: 15rem;
-        position: relative;
-        left: 17rem;
-        top: 10rem;
-    }
+    // &__skis {
+    //     border: 1px solid black;
+    //     width: 15rem;
+    //     height: 15rem;
+    //     position: relative;
+    //     left: 17rem;
+    //     top: 10rem;
+    // }
 
-    &__helmet {
-        border: 1px solid black;
-        width: 10rem;
-        height: 10rem;
-        left: 35rem;
-        top: -8rem;
-        position: relative;
-        cursor: pointer;
-    }
+    // &__helmet {
+    //     border: 1px solid black;
+    //     width: 10rem;
+    //     height: 10rem;
+    //     left: 35rem;
+    //     top: -8rem;
+    //     position: relative;
+    //     cursor: pointer;
+    // }
 
-    &__helmet:hover {
-        transform: translate(5%);
-    }
+    // &__helmet:hover {
+    //     transform: translate(5%);
+    // }
 
-    &__goggles {
+    // &__goggles {
 
-    }
+    // }
 
-    &__jacket {
-        border: 1px solid black;
-        width: 20rem;
-        height: 15rem;
-        position: relative;
-        left: 30rem;
-        cursor: pointer;
-    }
+    // &__jacket {
+    //     border: 1px solid black;
+    //     width: 20rem;
+    //     height: 15rem;
+    //     position: relative;
+    //     left: 30rem;
+    //     cursor: pointer;
+    // }
 }

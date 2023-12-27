@@ -12,7 +12,7 @@ function Heading() {
   return (
     <div className="header">
       <div className="header__burgerCont">
-        <Link className="header__links" to="/">
+        <Link className="header__links" to="/Home">
           <h1 className="header__heading">
             Bodie <br />
             Morgan
@@ -28,7 +28,7 @@ function Heading() {
       <nav className={`nav ${showNav ? "open" : ""} `}>
         <ul className="nav__list">
           <li className="nav__item">
-            <Link className="nav__link">About</Link>
+            <Link className="nav__link" to="/About">About</Link>
           </li>
 
           <li className="nav__item">
@@ -37,7 +37,7 @@ function Heading() {
             </Link>
           </li>
           <li className="nav__item">
-            <Link className="nav__link">
+            <Link className="nav__link" >
               Media
               </Link>
           </li>
