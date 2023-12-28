@@ -2,8 +2,9 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Gear from "./components/gear/Gear";
-import About from "./components/about/About.jsx";
+import About from "./components/about/About";
 import Heading from "./components/heading/Heading";
+import Media from "./components/media/Media";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route path="/Home" element={<Home />}></Route>
             <Route path="/About" element={<About/>}></Route>
             <Route path="/Gear" element={<Gear/>}></Route>
-            {/* <Route path="/Media" element={<Media/>}></Route>  */}
+            <Route path="/Media" element={<Media/>}></Route> 
           </Routes>
       </div>
     </BrowserRouter>

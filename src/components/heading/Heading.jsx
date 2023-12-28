@@ -41,7 +41,7 @@ function Heading() {
             </Link>
           </li>
           <li className="nav__item">
-            <Link className="nav__link" onClick={closeMenu} >
+            <Link className="nav__link" onClick={closeMenu} to="/Media">
               Media
               </Link>
           </li>
