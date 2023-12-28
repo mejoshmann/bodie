@@ -1,11 +1,12 @@
-// @use "../../styles/partials/mixins";
+@use "../../styles/mixins" as *;
 
 .gear {
     width: 100vw;
     height: 100vh;
-    background-image: url("../../images/Pow.jpg");
+    background-image: url("../../images/bodie3.jpg");
     background-size: cover;
     position: absolute;
+    background-position: center;
     top: 0;
     left: 0;
     z-index: -1;

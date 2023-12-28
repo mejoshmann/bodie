@@ -5,6 +5,10 @@ import { useState } from "react";
 function Heading() {
   const [showNav, setShowNav] = useState(false);
 
+  const closeMenu = () => {
+    setShowNav(false);
+  }
+
   const handleToggle = () => {
     setShowNav(!showNav);
   };
@@ -12,7 +16,7 @@ function Heading() {
   return (
     <div className="header">
       <div className="header__burgerCont">
-        <Link className="header__links" to="/Home">
+        <Link className="header__links" onClick={closeMenu} to="/Home">
           <h1 className="header__heading">
             Bodie <br />
             Morgan
@@ -28,16 +32,16 @@ function Heading() {
       <nav className={`nav ${showNav ? "open" : ""} `}>
         <ul className="nav__list">
           <li className="nav__item">
-            <Link className="nav__link" to="/About">About</Link>
+            <Link className="nav__link" onClick={closeMenu} to="/About">About</Link>
           </li>
 
           <li className="nav__item">
-            <Link className="nav__link" to="/Gear">
+            <Link className="nav__link" onClick={closeMenu} to="/Gear">
               Gear
             </Link>
           </li>
           <li className="nav__item">
-            <Link className="nav__link" >
+            <Link className="nav__link" onClick={closeMenu} >
               Media
               </Link>
           </li>

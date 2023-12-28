@@ -1,22 +1,50 @@
+@use "../../styles/mixins" as *;
+
 .about {
    display: flex;
    flex-direction: row;
    background-image: url("../../images/bodie2.jpg");
    background-size: cover;
-   background-repeat: no-repeat;
+   background-repeat: repeat;
    position: absolute;
    top: 0;
    left: 0;
    height: 100vh;
 
+   @include desktop {
+        height: 100%;
+        background-repeat: no-repeat;
+   }
+
    &__left {
-    width: 50%;
-    margin: 12% 0 0 0;
+    width: 100%;
+    margin: 40% 0 0 0;
     padding: 0 2%;
     background-color: #fff;
     opacity: 90%;   
-    border-top-right-radius: 90px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 
+    @include desktop {
+        width: 50%;
+        border-top-right-radius: 90px;
+        margin: 12% 0 0 0;
 
+    }
+   }
+
+   &__heading {
+    font-size: 1.6rem;
+    
+   }
+
+   &__subheading {
+    margin: 0;
+    padding: 0;
+   }
+
+   &__substance {
+    margin: 0;
+    padding: .5rem;
    }
 }
