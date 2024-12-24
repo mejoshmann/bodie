@@ -1,18 +1,17 @@
 import "./Media.scss";
 
+
 function Media() {
-    return(
-        <>
-        <div className="media">
-            <h1 className="media__heading">Media Page</h1>
-
-            <div className="media__container">
-                
-            </div>
-
-        </div>
-        </>
-    )
+  return (
+    <>
+    <main className="media">
+      <h1 className="media__heading">Media</h1>
+      <div className="media__container">
+        
+      </div>
+    </main>
+    </>
+  );
 }
 
 export default Media;

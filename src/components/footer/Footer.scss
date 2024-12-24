@@ -1,0 +1,84 @@
+@use "../../styles/mixins" as *;
+
+.footer {
+ background-color: #000;
+ padding-top: 1rem;
+
+    &__logo {
+        background-image: url("../../icons/atomicred.png");
+        background-size: contain;
+        width: auto;
+        height: 6rem;
+        background-repeat: repeat-x;
+        background-color: #000;
+        overflow:hidden;
+
+        @include tablet {
+            height: 10rem;
+        }
+
+        @include desktop {
+            height: 15rem;
+        }
+
+
+        @keyframes rollLogo {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        animation: rollLogo 20s linear infinite;
+    }
+
+    &__socialCopy {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+        &--copyright {
+            color: #fff;
+            font-weight: 300;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+
+        &--insta {
+            background-image: url("../../icons/instagram.png");
+        }
+
+        &--x {
+            background-image: url('../../icons/twitter.png');
+        }
+
+        &--tube {
+            background-image: url('../../icons/youtube.png');
+        }
+
+        &--insta,
+         &--x,
+         &--tube {
+            background-repeat: no-repeat;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-size: contain;
+            color: #fff;
+
+            @include tablet {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    
+
+    }
+
+  
+}

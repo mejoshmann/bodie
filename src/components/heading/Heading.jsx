@@ -1,54 +1,63 @@
 import "./Heading.scss";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { Link } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 
 function Heading() {
-  const [showNav, setShowNav] = useState(false);
-
-  const closeMenu = () => {
-    setShowNav(false);
-  }
+  const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const dropdownRef = useRef();
 
   const handleToggle = () => {
-    setShowNav(!showNav);
+    setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const scrollThreshold = 100;
+      setShowNav(scrollY <= scrollThreshold);
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="header">
-      <div className="header__burgerCont">
-        <Link className="header__links" onClick={closeMenu} to="/Home">
-          <h1 className="header__heading">
-            Bodie <br />
-            Morgan
-          </h1>
-        </Link>
+    <>
+      <nav
+        className="head"
+        style={{ opacity: showNav ? 1 : 0, transition: "opacity 0.5s" }}
+      >
+        <div className="head__container">
+          <h1 className="head__container--logo">BODIE</h1>
+          <h1 className="head__container--logo">MORGAN</h1>
+        </div>
 
-        <div
-          className={`header__hamburger ${showNav ? "open" : ""}`}
-          onClick={handleToggle}
-        ></div>
-      </div>
+        <div className="head__container--burger" onClick={handleToggle}>
+          <span></span>
+        </div>
 
-      <nav className={`nav ${showNav ? "open" : ""} `}>
-        <ul className="nav__list">
-          <li className="nav__item">
-            <Link className="nav__link" onClick={closeMenu} to="/About">About</Link>
-          </li>
-
-          <li className="nav__item">
-            <Link className="nav__link" onClick={closeMenu} to="/Gear">
-              Gear
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link className="nav__link" onClick={closeMenu} to="/Media">
-              Media
-              </Link>
-          </li>
+        <ul className={`head__list ${isOpen ? "open" : ""} `}>
+          <li className="head__list--item">About</li>
+          <li className="head__list--item">Gear</li>
+          <li className="head__list--item">Media</li>
         </ul>
       </nav>
-      
-    </div>
+    </>
   );
 }
 
